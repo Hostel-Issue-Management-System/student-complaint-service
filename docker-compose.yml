@@ -1,0 +1,28 @@
+version: '3'
+services:
+  frontend-container:
+    image: frontend
+    ports:
+      - 3000-3004:80
+    depends_on:
+      - backend-container
+    environment:
+      - CONTAINER_URL=${CONTAINER_NAME}
+      - API_URL=./api
+  backend-container:
+    image: backend
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/HospitalSystem?createDatabaseIfNotExist=true&useSSL=false
+      - SPRING_DATASOURCE_PASSWORD=password
+    depends_on:
+      - mysql-container
+    restart: on-failure
+    container_name: ${CONTAINER_NAME}
+  mysql-container:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
