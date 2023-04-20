@@ -1,7 +1,7 @@
-package com.example.studentcompliantservice.interfaces;
+package com.example.studentcomplaintservice.interfaces;
 
-import com.example.studentcompliantservice.bean.Response;
-import com.example.studentcompliantservice.bean.Student;
+import com.example.studentcomplaintservice.bean.Response;
+import com.example.studentcomplaintservice.bean.Student;
 import org.springframework.http.ResponseEntity;
 
 public interface StudentInterface {

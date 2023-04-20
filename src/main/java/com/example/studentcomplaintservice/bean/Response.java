@@ -1,4 +1,4 @@
-package com.example.studentcompliantservice.bean;
+package com.example.studentcomplaintservice.bean;
 
 public class Response {
     Object object;

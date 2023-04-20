@@ -1,6 +1,6 @@
-package com.example.studentcompliantservice.repository;
+package com.example.studentcomplaintservice.repository;
 
-import com.example.studentcompliantservice.bean.Student;
+import com.example.studentcomplaintservice.bean.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

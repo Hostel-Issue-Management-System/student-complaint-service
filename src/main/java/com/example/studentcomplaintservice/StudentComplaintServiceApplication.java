@@ -1,13 +1,13 @@
-package com.example.studentcompliantservice;
+package com.example.studentcomplaintservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StudentCompliantServiceApplication {
+public class StudentComplaintServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StudentCompliantServiceApplication.class, args);
+		SpringApplication.run(StudentComplaintServiceApplication.class, args);
 	}
 
 }

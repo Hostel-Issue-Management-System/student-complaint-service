@@ -1,8 +1,8 @@
-package com.example.studentcompliantservice.controller;
+package com.example.studentcomplaintservice.controller;
 
-import com.example.studentcompliantservice.bean.Response;
-import com.example.studentcompliantservice.bean.Student;
-import com.example.studentcompliantservice.interfaces.StudentInterface;
+import com.example.studentcomplaintservice.bean.Response;
+import com.example.studentcomplaintservice.bean.Student;
+import com.example.studentcomplaintservice.interfaces.StudentInterface;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
