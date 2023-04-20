@@ -36,6 +36,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: prith17/spemajorproject
+          tags: v1, latest
           registry: docker.io
           dockerfile: Dockerfile.ci
           username: ${{ secrets.DOCKER_USERNAME }}
