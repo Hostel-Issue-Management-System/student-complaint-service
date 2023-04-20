@@ -39,7 +39,7 @@ jobs:
           retention-days: 1
 
   deploy:
-      runs-on: ubuntu-18.04
+      runs-on: ubuntu-latest
       needs: build
 
       steps:
@@ -61,7 +61,7 @@ jobs:
           run: |
             docker push shayki/shayki-maven:${{needs.build.outputs.jar_version}}
   run:
-      runs-on: ubuntu-18.04
+      runs-on: ubuntu-latest
       needs: [build, deploy]
 
       steps:
