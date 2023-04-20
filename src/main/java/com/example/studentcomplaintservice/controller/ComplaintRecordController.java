@@ -1,13 +1,10 @@
 package com.example.studentcomplaintservice.controller;
-
 import com.example.studentcomplaintservice.bean.ComplaintRecord;
 import com.example.studentcomplaintservice.bean.Response;
 import com.example.studentcomplaintservice.interfaces.ComplaintRecordInterface;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Map;
 
@@ -58,7 +55,6 @@ public class ComplaintRecordController {
         return complaintRecordInterface.resolveComplaintRecordByComplaintId(complaintId);
     }
 
-        // delete employee rest api
     @DeleteMapping("/deleteComplaintRecordByComplaintId/{complaintId}")
     public ResponseEntity<Map<String, Boolean>> deleteComplaintRecordByComplaintId(@PathVariable("complaintId") Integer complaintId){
             return complaintRecordInterface.deleteComplaintRecordByComplaintId(complaintId);

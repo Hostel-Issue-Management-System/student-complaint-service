@@ -1,25 +1,16 @@
 package com.example.studentcomplaintservice.service;
-
 import com.example.studentcomplaintservice.bean.ComplaintRecord;
-
 import com.example.studentcomplaintservice.bean.Response;
 import com.example.studentcomplaintservice.interfaces.ComplaintRecordInterface;
-
 import com.example.studentcomplaintservice.repository.ComplaintRecordRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+
 
 @Service
 public class ComplaintRecordService implements ComplaintRecordInterface {
@@ -79,7 +70,6 @@ public class ComplaintRecordService implements ComplaintRecordInterface {
         ComplaintRecord updatedEmployee = complaintRecordRepository.save(complaintUpdateRecord);
         return ResponseEntity.ok(updatedEmployee);
     }
-    // delete employee rest api
     @Override
     public ResponseEntity<Map<String, Boolean>> deleteComplaintRecordByComplaintId(Integer complaintId){
         ComplaintRecord complaintDeleteRecord = complaintRecordRepository.getComplaintRecordByComplaintId(complaintId);
