@@ -34,7 +34,7 @@ jobs:
     
       - uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: rahul2331998/spe_backend
+          image: prith17/spe_major_backend
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
