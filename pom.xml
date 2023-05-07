@@ -12,11 +12,11 @@
 	<artifactId>student-complaint-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>student-complaint-service</name>
-	<description>Patient Service for requesting consents</description>
-	<properties>
+	<description>student-complaint-service</description>
+<!-- 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
-	</properties>
+	</properties> -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
