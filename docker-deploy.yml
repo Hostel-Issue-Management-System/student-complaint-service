@@ -1,5 +1,5 @@
 ---
-- name: Pull docker image of spe_major_backend
+- name: Pull docker images of spe_major_backend and spe_major_frontend
   hosts: all
   tasks:
 
@@ -11,5 +11,11 @@
     - name: pull docker image
       shell: docker pull prith17/spe_major_backend
 
+
+
+    - name: pull docker image
+      shell: docker pull prith17/spe_major_frontend
+      
     - name: running container
       shell: docker run -it -d prith17/spe_major_backend
+      
