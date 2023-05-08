@@ -19,7 +19,7 @@
       
     - name: running frontend container
       shell: docker run -it -d prith17/spe_major_frontend
-#     - name: running backend container
-#       shell: docker run -it -d prith17/spe_major_backend
+    - name: running backend container
+      shell: docker run -it -d prith17/spe_major_backend
 
       
