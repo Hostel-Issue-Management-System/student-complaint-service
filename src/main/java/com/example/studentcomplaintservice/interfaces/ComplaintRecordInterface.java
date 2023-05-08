@@ -10,7 +10,7 @@ public interface ComplaintRecordInterface {
     ResponseEntity<ComplaintRecord> addComplaintRecord(ComplaintRecord complaintRecord);
     ResponseEntity<ComplaintRecord> getComplaintRecordByComplaintId(Integer Id);
 
-    ResponseEntity<List<ComplaintRecord>> getComplaintRecordByStudentId(String studentId);
+    ResponseEntity<List<ComplaintRecord>> getComplaintRecordByRollNumber(String rollNumber);
 
     Response getAllComplaintRecords();
 

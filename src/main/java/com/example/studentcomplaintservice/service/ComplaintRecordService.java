@@ -42,8 +42,8 @@ public class ComplaintRecordService implements ComplaintRecordInterface {
     }
 
     @Override
-    public ResponseEntity<List<ComplaintRecord>> getComplaintRecordByStudentId(String studentId){
-        List<ComplaintRecord> listOfComplaintRecord = complaintRecordRepository.getComplaintRecordByStudentId(studentId);
+    public ResponseEntity<List<ComplaintRecord>> getComplaintRecordByRollNumber(String rollNumber){
+        List<ComplaintRecord> listOfComplaintRecord = complaintRecordRepository.getComplaintRecordByRollNumber(rollNumber);
         if (listOfComplaintRecord == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -57,7 +57,7 @@ public class ComplaintRecordService implements ComplaintRecordInterface {
         complaintUpdateRecord.setComplaintType(complaintRecord.getComplaintType());
         complaintUpdateRecord.setDescription(complaintRecord.getDescription());
         complaintUpdateRecord.setRoomNumber(complaintRecord.getRoomNumber());
-        complaintUpdateRecord.setStudentId(complaintRecord.getStudentId());
+        complaintUpdateRecord.setRollNumber(complaintRecord.getRollNumber());
         complaintUpdateRecord.setStatus("Open");
         ComplaintRecord updatedEmployee = complaintRecordRepository.save(complaintUpdateRecord);
         return ResponseEntity.ok(updatedEmployee);

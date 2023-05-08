@@ -39,9 +39,9 @@ public class ComplaintRecordController {
         return complaintRecordInterface.getComplaintRecordByComplaintId(complaintId);
     }
 
-    @PostMapping("/getComplaintRecordByStudentId/{studentId}")
-    public ResponseEntity<List<ComplaintRecord>> getComplaintRecordByStudentId(@PathVariable("studentId") String studentId) {
-        return complaintRecordInterface.getComplaintRecordByStudentId(studentId);
+    @PostMapping("/getComplaintRecordByRollNumber/{rollNumber}")
+    public ResponseEntity<List<ComplaintRecord>> getComplaintRecordByRollNumber(@PathVariable("rollNumber") String rollNumber) {
+        return complaintRecordInterface.getComplaintRecordByRollNumber(rollNumber);
     }
 
 
