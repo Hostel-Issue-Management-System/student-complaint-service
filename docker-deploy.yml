@@ -15,7 +15,7 @@
       shell: docker pull prith17/spe_major_frontend
       
     - name: docker compose it
-      shell: docker-compose -f docker-compose.yml up
+      shell: docker-compose -f ./docker-compose.yml up
       
 #     - name: running frontend container
 #       shell: docker run -it -d prith17/spe_major_frontend
