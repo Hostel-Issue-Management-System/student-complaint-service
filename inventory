@@ -1,2 +1,2 @@
 [ubuntu22]
-192.168.70.131 ansible_user=prith17
+172.22.202.255 ansible_user=prith17
