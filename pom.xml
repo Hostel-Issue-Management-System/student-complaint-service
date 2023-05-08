@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>had-hospital-service</artifactId>
+	<artifactId>student-complaint-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>had-hospital-service</name>
-	<description>Patient Service for requesting consents</description>
+	<name>student-complaint-service</name>
+	<description>Student complaint system</description>
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
