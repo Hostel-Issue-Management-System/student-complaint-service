@@ -12,7 +12,7 @@ services:
   backend-container:
     image: backend
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/HospitalSystem?createDatabaseIfNotExist=true&useSSL=false
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-container:3306/HostelManagementSystem?createDatabaseIfNotExist=true&useSSL=false
       - SPRING_DATASOURCE_PASSWORD=password
     depends_on:
       - mysql-container
@@ -22,7 +22,43 @@ services:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=password
+    volumes:version: '3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
     volumes:
+      - ./db_data:/var/lib/mysql
+    networks:
+      - my-network  
+  
+  frontend:
+    depends_on:
+      - backend
+    image: prith17/spe_major_frontend
+    ports:
+      - "3000:3000"
+   
+    networks:
+      - my-network  
+  backend:
+    depends_on:
+      - db
+    image: prith17/spe_major_backend:latest
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db/HostelManagementSystem?createDatabaseIfNotExist=true
+      
+      - SPRING_DATASOURCE_PASSWORD=root
+    ports:
+      - "9101:9101"
+    
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge 
       - db_data:/var/lib/mysql
 volumes:
   db_data:
