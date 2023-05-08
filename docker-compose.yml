@@ -9,6 +9,7 @@ services:
     environment:
       - CONTAINER_URL=${CONTAINER_NAME}
       - API_URL=./api
+
   backend-container:
     image: backend
     environment:
@@ -18,49 +19,16 @@ services:
       - mysql-container
     restart: on-failure
     container_name: ${CONTAINER_NAME}
+
   mysql-container:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=password
-    volumes:version: '3'
-services:
-  db:
-    image: mysql:5.7
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-
     volumes:
       - db_data:/var/lib/mysql
-    networks:
-      - my-network  
-  
-  frontend:
-    depends_on:
-      - backend
-    image: prith17/spe_major_frontend
-    ports:
-      - "3000:3000"
-   
-    networks:
-      - my-network  
-  backend:
-    depends_on:
-      - db
-    image: prith17/spe_major_backend:latest
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db/HostelManagementSystem?createDatabaseIfNotExist=true
-      
-      - SPRING_DATASOURCE_PASSWORD=root
-    ports:
-      - "9101:9101"
-    
-    networks:
-      - my-network
-networks:
-  my-network:
-    driver: bridge 
-      - db_data:/var/lib/mysql
+
 volumes:
   db_data:
-  
-  
+
+networks:
+  my-network:
