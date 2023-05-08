@@ -8,14 +8,15 @@
         name: docker
         state: started
 
-    - name: pull docker image
+    - name: pull docker backend image
       shell: docker pull prith17/spe_major_backend
 
-
-
-    - name: pull docker image
+    - name: pull docker frontend image
       shell: docker pull prith17/spe_major_frontend
       
-    - name: running container
+    - name: running backend container
       shell: docker run -it -d prith17/spe_major_backend
+      
+    - name: running frontend container
+      shell: docker run -it -d prith17/spe_major_frontend
       
