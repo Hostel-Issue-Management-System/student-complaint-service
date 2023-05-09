@@ -7,12 +7,12 @@ import java.util.Map;
 
 public interface ComplaintRecordInterface {
 
-    ResponseEntity<ComplaintRecord> addComplaintRecord(ComplaintRecord complaintRecord);
+    Response addComplaintRecord(ComplaintRecord complaintRecord);
     ResponseEntity<ComplaintRecord> getComplaintRecordByComplaintId(Integer Id);
 
     ResponseEntity<List<ComplaintRecord>> getComplaintRecordByRollNumber(String rollNumber);
 
-    Response getAllComplaintRecords();
+    ResponseEntity<List<ComplaintRecord>> getAllComplaintRecords();
 
 
     ResponseEntity<ComplaintRecord> updateComplaintRecord(Integer complaintId,ComplaintRecord complaintRecord);

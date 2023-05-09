@@ -30,15 +30,16 @@ public class ComplaintRecordService implements ComplaintRecordInterface {
         return new ResponseEntity<ComplaintRecord>(complaintRecord, HttpStatus.OK);
     }
     @Override
-    public ResponseEntity<ComplaintRecord> addComplaintRecord(ComplaintRecord complaintRecord) {
+    public Response addComplaintRecord(ComplaintRecord complaintRecord) {
         ComplaintRecord complaintRecordData = complaintRecordRepository.save(complaintRecord);
-            return new ResponseEntity<ComplaintRecord>(complaintRecordData, HttpStatus.OK);
+            return new Response(complaintRecordData, 200);
     }
 
     @Override
-    public Response getAllComplaintRecords() {
+    public ResponseEntity<List<ComplaintRecord>> getAllComplaintRecords() {
         List<ComplaintRecord> complaintRecord = complaintRecordRepository.findAll();
-        return new Response(complaintRecord, 200);
+        System.out.println(complaintRecord);
+        return new ResponseEntity<List<ComplaintRecord>>(complaintRecord,  HttpStatus.OK);
     }
 
     @Override

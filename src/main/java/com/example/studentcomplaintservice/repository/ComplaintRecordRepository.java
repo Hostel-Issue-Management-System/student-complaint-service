@@ -11,5 +11,6 @@ public interface ComplaintRecordRepository extends JpaRepository<ComplaintRecord
 
     List<ComplaintRecord> getComplaintRecordByRollNumber(String rollNumber);
 
+//    List<ComplaintRecord> getAllComplaintRecords();
 
 }

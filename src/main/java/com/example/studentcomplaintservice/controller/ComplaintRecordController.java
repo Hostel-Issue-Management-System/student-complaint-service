@@ -24,12 +24,12 @@ public class ComplaintRecordController {
 
 
     @PostMapping("/addComplaintRecord")
-    public ResponseEntity<ComplaintRecord> addComplaintRecord(@RequestBody ComplaintRecord complaintRecord) {
+    public Response addComplaintRecord(@RequestBody ComplaintRecord complaintRecord) {
         return complaintRecordInterface.addComplaintRecord(complaintRecord);
     }
 
     @GetMapping("/getAllComplaintRecords")
-    public Response getAllComplaintRecords() {
+    public ResponseEntity<List<ComplaintRecord>> getAllComplaintRecords() {
         return complaintRecordInterface.getAllComplaintRecords();
     }
 
