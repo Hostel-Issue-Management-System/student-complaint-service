@@ -9,7 +9,8 @@ public interface ComplaintRecordRepository extends JpaRepository<ComplaintRecord
 
     ComplaintRecord getComplaintRecordByComplaintId(Integer complaintId);
 
-    List<ComplaintRecord> getComplaintRecordByStudentId(String studentId);
+    List<ComplaintRecord> getComplaintRecordByRollNumber(String rollNumber);
 
+//    List<ComplaintRecord> getAllComplaintRecords();
 
 }

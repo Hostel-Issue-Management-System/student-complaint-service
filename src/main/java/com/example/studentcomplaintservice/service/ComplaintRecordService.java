@@ -30,20 +30,21 @@ public class ComplaintRecordService implements ComplaintRecordInterface {
         return new ResponseEntity<ComplaintRecord>(complaintRecord, HttpStatus.OK);
     }
     @Override
-    public ResponseEntity<ComplaintRecord> addComplaintRecord(ComplaintRecord complaintRecord) {
+    public Response addComplaintRecord(ComplaintRecord complaintRecord) {
         ComplaintRecord complaintRecordData = complaintRecordRepository.save(complaintRecord);
-            return new ResponseEntity<ComplaintRecord>(complaintRecordData, HttpStatus.OK);
+            return new Response(complaintRecordData, 200);
     }
 
     @Override
-    public Response getAllComplaintRecords() {
+    public ResponseEntity<List<ComplaintRecord>> getAllComplaintRecords() {
         List<ComplaintRecord> complaintRecord = complaintRecordRepository.findAll();
-        return new Response(complaintRecord, 200);
+        System.out.println(complaintRecord);
+        return new ResponseEntity<List<ComplaintRecord>>(complaintRecord,  HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity<List<ComplaintRecord>> getComplaintRecordByStudentId(String studentId){
-        List<ComplaintRecord> listOfComplaintRecord = complaintRecordRepository.getComplaintRecordByStudentId(studentId);
+    public ResponseEntity<List<ComplaintRecord>> getComplaintRecordByRollNumber(String rollNumber){
+        List<ComplaintRecord> listOfComplaintRecord = complaintRecordRepository.getComplaintRecordByRollNumber(rollNumber);
         if (listOfComplaintRecord == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -57,7 +58,7 @@ public class ComplaintRecordService implements ComplaintRecordInterface {
         complaintUpdateRecord.setComplaintType(complaintRecord.getComplaintType());
         complaintUpdateRecord.setDescription(complaintRecord.getDescription());
         complaintUpdateRecord.setRoomNumber(complaintRecord.getRoomNumber());
-        complaintUpdateRecord.setStudentId(complaintRecord.getStudentId());
+        complaintUpdateRecord.setRollNumber(complaintRecord.getRollNumber());
         complaintUpdateRecord.setStatus("Open");
         ComplaintRecord updatedEmployee = complaintRecordRepository.save(complaintUpdateRecord);
         return ResponseEntity.ok(updatedEmployee);

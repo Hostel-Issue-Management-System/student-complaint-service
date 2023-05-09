@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 
 @Entity
 public class ComplaintRecord {
-    public ComplaintRecord(String complaintType, Integer roomNumber, String description, String studentId, String status) {
+    public ComplaintRecord(String complaintType, Integer roomNumber, String description, String rollNumber, String status) {
         this.complaintType= complaintType;;
         this.roomNumber = roomNumber;
         this.description=description;
         this.status=status;
-        this.studentId=studentId;
+        this.rollNumber=rollNumber;
     }
 
     public ComplaintRecord(){}
@@ -44,21 +44,16 @@ public class ComplaintRecord {
     String status;
 
     @Column
-    String studentId;
+    String rollNumber;
 
 
-
-
-
-    public String getStudentId() {
-        return studentId;
+    public String getRollNumber() {
+        return rollNumber;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
+    public void setRollNumber(String rollNumber) {
+        this.rollNumber = rollNumber;
     }
-
-
 
     public Integer getRoomNumber() {
         return roomNumber;

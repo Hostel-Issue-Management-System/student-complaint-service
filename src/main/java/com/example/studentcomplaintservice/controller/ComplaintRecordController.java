@@ -24,12 +24,12 @@ public class ComplaintRecordController {
 
 
     @PostMapping("/addComplaintRecord")
-    public ResponseEntity<ComplaintRecord> addComplaintRecord(@RequestBody ComplaintRecord complaintRecord) {
+    public Response addComplaintRecord(@RequestBody ComplaintRecord complaintRecord) {
         return complaintRecordInterface.addComplaintRecord(complaintRecord);
     }
 
     @GetMapping("/getAllComplaintRecords")
-    public Response getAllComplaintRecords() {
+    public ResponseEntity<List<ComplaintRecord>> getAllComplaintRecords() {
         return complaintRecordInterface.getAllComplaintRecords();
     }
 
@@ -39,9 +39,9 @@ public class ComplaintRecordController {
         return complaintRecordInterface.getComplaintRecordByComplaintId(complaintId);
     }
 
-    @PostMapping("/getComplaintRecordByStudentId/{studentId}")
-    public ResponseEntity<List<ComplaintRecord>> getComplaintRecordByStudentId(@PathVariable("studentId") String studentId) {
-        return complaintRecordInterface.getComplaintRecordByStudentId(studentId);
+    @PostMapping("/getComplaintRecordByRollNumber/{rollNumber}")
+    public ResponseEntity<List<ComplaintRecord>> getComplaintRecordByRollNumber(@PathVariable("rollNumber") String rollNumber) {
+        return complaintRecordInterface.getComplaintRecordByRollNumber(rollNumber);
     }
 
 
