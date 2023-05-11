@@ -21,6 +21,6 @@
     - name: running backend container
       shell: docker run -it -d prith17/spe_major_backend
 
-    - name: docker compose it
-      shell: docker-compose up
+#     - name: docker compose it
+#       shell: docker-compose up
       
