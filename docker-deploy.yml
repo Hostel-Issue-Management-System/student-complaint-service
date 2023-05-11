@@ -14,12 +14,12 @@
     - name: pull docker frontend image
       shell: docker pull prith17/spe_major_frontend
       
-    - name: docker compose it
-      shell: docker-compose up
+#     - name: docker compose it
+#       shell: docker-compose up
       
-#     - name: running frontend container
-#       shell: docker run -it -d prith17/spe_major_frontend
-#     - name: running backend container
-#       shell: docker run -it -d prith17/spe_major_backend
+    - name: running frontend container
+      shell: docker run -it -d prith17/spe_major_frontend
+    - name: running backend container
+      shell: docker run -it -d prith17/spe_major_backend
 
       
